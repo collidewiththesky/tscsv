@@ -12,7 +12,7 @@ elegir = st.sidebar.selectbox('Ir a:',list(paginas.keys()))
 
 if elegir == 'Inicio':
   import secciones.pagina1
-  secciones.pagina1.inicio()
+  secciones.pagina1.home()
 elif elegir == 'Albumes':
   import secciones.pagina2
   secciones.pagina2.albumes()
