@@ -8,7 +8,7 @@ st.sidebar.markdown('![Alt Text](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdW
 if elegir == 'Inicio':
   homepage.pginicio()
 elif elegir == 'Albumes':
-  pag2.albumes()
+  pag2.albums()
 elif elegir == 'Análisis':
   pag3.analisis()
 elif elegir == 'Recomendaciones':
