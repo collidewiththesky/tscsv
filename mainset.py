@@ -11,8 +11,8 @@ paginas = {
 elegir = st.sidebar.selectbox('Ir a:',list(paginas.keys()))
 
 if elegir == 'Inicio':
-  import secciones.pagina1
-  secciones.pagina1.home()
+  import secciones.hmpage
+  secciones.hmpage.home()
 elif elegir == 'Albumes':
   import secciones.pagina2
   secciones.pagina2.albumes()
