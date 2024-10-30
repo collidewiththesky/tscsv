@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-def albumes():
+def albums():
   df = pd.read_csv('taylor_swift_spotify.csv')
 
   st.title('Álbumes')
