@@ -8,7 +8,7 @@ paginas = {
   'Recomendaciones' : 'p4'
 }
 
-elegir = st.sidebar.radio('Ir a:',list(paginas.keys()))
+elegir = st.sidebar.selectbox('Ir a:',list(paginas.keys()))
 
 if elegir == 'Inicio':
   import secciones.hmpage
