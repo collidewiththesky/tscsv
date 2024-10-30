@@ -1,4 +1,5 @@
 import streamlit as st
+import requests
 
 def inicio():
   st.title('Taylor Swift')
