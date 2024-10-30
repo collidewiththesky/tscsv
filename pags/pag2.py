@@ -15,6 +15,6 @@ def albums():
   elif alb == 'Fearless':
     st.image('logos/fearless.png')
   else:
-    st.write('si)
+    st.write('si')
     
   
