@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 def albums():
-  st.title('Álbumes')
+  st.subheader('Álbumes')
   alb = st.selectbox(
     'Elige un álbum:',
     ('Taylor Swift','Fearless','Speak Now','Red','1989','Reputation','Lover','Folklore','Evermore','Midnights','The Tortured Poets Department'),
