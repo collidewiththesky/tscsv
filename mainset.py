@@ -1,24 +1,14 @@
 import streamlit as st
 import requests
+from secciones import hmpage, pagina2, pagina3, pagina4
 
-paginas = {
-  'Inicio' : 'p1',
-  'Albumes' : 'p2',
-  'Análisis' : 'p3',
-  'Recomendaciones' : 'p4'
-}
-
-elegir = st.sidebar.selectbox('Ir a:',list(paginas.keys()))
+elegir = st.sidebar.selectbox('Ir a:',['Inicio','Álbumes','Análisis','Recomendaciones'])
 
 if elegir == 'Inicio':
-  import secciones.hmpage
-  secciones.hmpage.home()
+  hmpage.home()
 elif elegir == 'Albumes':
-  import secciones.pagina2
-  secciones.pagina2.albumes()
+  pagina2.albumes()
 elif elegir == 'Análisis':
-  import secciones.pagina3
-  secciones.pagina3.analisis()
+  pagina3.analisis()
 elif elegir == 'Recomendaciones':
-  import secciones.pagina4
-  secciones.pagina4.recs()
+  pagina4.recs()
