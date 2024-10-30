@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-def inicio():
+def home():
   try:
     st.title('Taylor Swift')
     st.subheader('Álbumes, análisis de Spotify y recomendaciones de canciones')
