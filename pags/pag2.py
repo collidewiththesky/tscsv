@@ -3,7 +3,7 @@ import pandas as pd
 import logos
 
 def albums():
-  st.title('Albumes')
+  st.header('Albumes')
   #alb = st.selectbox(
    # 'Elige un álbum:',
     #('Taylor Swift','Fearless','Speak Now','Red','1989','Reputation','Lover','Folklore','Evermore','Midnights','The Tortured Poets Department'),
