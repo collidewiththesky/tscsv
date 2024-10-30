@@ -4,7 +4,7 @@ import logos
 
 def albums():
   st.title('Álbumes')
-  alb = st.selectbox(
+  alb = st.slider(
     'Elige un álbum:',
     ('Taylor Swift','Fearless','Speak Now','Red','1989','Reputation','Lover','Folklore','Evermore','Midnights','The Tortured Poets Department'),
   )
