@@ -30,6 +30,11 @@ def albums():
     st.write(f"Canciones del álbum: {albumts}\n")
     for index, row in canciones.iterrows():
       st.write(f"{row['track_number']}.- {row['name']}")
+      embed_code = """
+    <iframe src="https://open.spotify.com/embed/album/4hDok0OAJd57SGIT8xuWJH?utm_source=generator" width="900" height="380" frameBorder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+    """
+    st.subheader('Escucha el álbum aquí:')
+    st.components.v1.html(embed_code, height=400)
   elif alb == 'Speak Now':
     st.image('logos/sntv.png')
     albumts = "Speak Now (Taylor's Version)"
