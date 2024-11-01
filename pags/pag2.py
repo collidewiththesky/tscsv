@@ -8,6 +8,8 @@ def albums():
     'Elige un álbum:',
     ('Taylor Swift','Fearless','Speak Now','Red','1989','Reputation','Lover','Folklore','Evermore','Midnights','The Tortured Poets Department'),
   )
+
+  df = pd.read_csv('taylor_swift_spotify.csv')
                                                                                      
   if alb == 'Taylor Swift':
     st.image('logos/debut.png')
