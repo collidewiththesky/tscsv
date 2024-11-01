@@ -81,9 +81,9 @@ def albums():
     st.write(f"Canciones del álbum: {albumts}\n")
     for index, row in canciones.iterrows():
       st.write(f"{row['track_number']}.- {row['name']}")
-  elif alb == 'The Tortured Poets Department'
+  elif alb == 'The Tortured Poets Department':
     st.image('logos/ttpd.png')
-    albumts = "THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY":
+    albumts = "THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY"
     canciones = df.loc[df['album'] == albumts]
     st.write(f"Canciones del álbum: {albumts}\n")
     for index, row in canciones.iterrows():
