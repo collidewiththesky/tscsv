@@ -33,7 +33,7 @@ def albums():
     for index, row in canciones.iterrows():
       st.write(f"{row['track_number']}.- {row['name']}")
   elif alb == 'Red':
-    st.image('logos/red tv.png', width=500)
+    st.image('logos/red tv.png', width=200)
     albumts = "Red (Taylor's Version)"
     canciones = df.loc[df['album'] == albumts]
     st.write(f"Canciones del álbum: {albumts}\n")
