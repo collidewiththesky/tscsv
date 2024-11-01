@@ -19,8 +19,9 @@ def albums():
     for index, row in canciones.iterrows():
       st.write(f"{row['track_number']}.- {row['name']}")
     embed_code = """
-    <iframe src="https://open.spotify.com/embed/album/5eyZZoQEFQWRHkV2xgAeBw?utm_source=generator" width="300" height="380" frameBorder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+    <iframe src="https://open.spotify.com/embed/album/5eyZZoQEFQWRHkV2xgAeBw?utm_source=generator" width="900" height="380" frameBorder="0" allowTransparency="true" allow="encrypted-media"></iframe>
     """
+    st.write('Escucha el álbum aquí:')
     st.components.v1.html(embed_code, height=400)
   elif alb == 'Fearless':
     st.image('logos/fearless.png')
