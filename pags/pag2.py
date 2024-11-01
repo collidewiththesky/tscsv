@@ -17,7 +17,7 @@ def albums():
     canciones = df.loc[df['album'] == albumts]
     st.write(f"Canciones del álbum: {albumts}\n")
     for index, row in canciones.iterrows():
-      st.write(f"{row['track_number']}.- {row['name']}"})
+      st.write(f"{row['track_number']}.- {row['name']}")
   elif alb == 'Fearless':
     st.image('logos/fearless.png')
     albumts = "Fearless (Taylor's Version)"
@@ -26,7 +26,7 @@ def albums():
     for index, row in canciones.iterrows():
       st.write(f"{row['track_number']}.- {row['name']}")
   elif alb == 'Speak Now':
-    st.image('logos/sntv.png',width=500)
+    st.image('logos/sntv.png')
     albumts = "Speak Now (Taylor's Version)"
     canciones = df.loc[df['album'] == albumts]
     st.write(f"Canciones del álbum: {albumts}\n")
@@ -40,7 +40,7 @@ def albums():
     for index, row in canciones.iterrows():
       st.write(f"{row['track_number']}.- {row['name']}")
   elif alb == '1989':
-    st.image('logos/1989tv.png',width=500)
+    st.image('logos/1989tv.png')
     albumts = "1989 (Taylor's Version)"
     canciones = df.loc[df['album'] == albumts]
     st.write(f"Canciones del álbum: {albumts}\n")
@@ -89,4 +89,3 @@ def albums():
     for index, row in canciones.iterrows():
       st.write(f"{row['track_number']}.- {row['name']}")
     
-  
