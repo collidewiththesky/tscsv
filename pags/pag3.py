@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+import streamlit as st
 
 def analisis():
   df = pd.read_csv('taylor_swift_spotify.csv')
