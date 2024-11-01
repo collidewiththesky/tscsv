@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-def graficos():
+def analisis():
   df = pd.read_csv('taylor_swift_spotify.csv')
   st.title('Número de Canciones por Álbum')
   cpa = df['album'].value_counts()
