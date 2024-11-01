@@ -54,11 +54,6 @@ def albums():
     st.write(f"Canciones del álbum: {albumts}\n")
     for index, row in canciones.iterrows():
       st.write(f"{row['track_number']}.- {row['name']}")
-    embed_code = """
-    <iframe src="https://open.spotify.com/embed/album/6kZ42qRrzov54LcAk4onW9?utm_source=generator" width="900" height="380" frameBorder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-    """
-    st.subheader('Escucha el álbum aquí:')
-    st.components.v1.html(embed_code, height=400)
   elif alb == '1989':
     st.image('logos/1989tv.png')
     albumts = "1989 (Taylor's Version)"
@@ -66,11 +61,6 @@ def albums():
     st.write(f"Canciones del álbum: {albumts}\n")
     for index, row in canciones.iterrows():
       st.write(f"{row['track_number']}.- {row['name']}")
-    embed_code = """
-    <iframe src="https://open.spotify.com/embed/album/64LU4c1nfjz1t4VnGhagcg?utm_source=generator" width="900" height="380" frameBorder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-    """
-    st.subheader('Escucha el álbum aquí:')
-    st.components.v1.html(embed_code, height=400)
   elif alb == 'Reputation':
     st.image('logos/rep.png')
     albumts = "reputation"
@@ -85,11 +75,6 @@ def albums():
     st.write(f"Canciones del álbum: {albumts}\n")
     for index, row in canciones.iterrows():
       st.write(f"{row['track_number']}.- {row['name']}")
-    embed_code = """
-    <iframe src="https://open.spotify.com/embed/album/4hDok0OAJd57SGIT8xuWJH?utm_source=generator" width="900" height="380" frameBorder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-    """
-    st.subheader('Escucha el álbum aquí:')
-    st.components.v1.html(embed_code, height=400)
   elif alb == 'Folklore':
     st.image('logos/folklore.png')
     albumts = "folklore (deluxe version)"
@@ -97,11 +82,6 @@ def albums():
     st.write(f"Canciones del álbum: {albumts}\n")
     for index, row in canciones.iterrows():
       st.write(f"{row['track_number']}.- {row['name']}")
-    embed_code = """
-    <iframe src="https://open.spotify.com/embed/album/1pzvBxYgT6OVwJLtHkrdQK?utm_source=generator" width="900" height="380" frameBorder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-    """
-    st.subheader('Escucha el álbum aquí:')
-    st.components.v1.html(embed_code, height=400)
   elif alb == 'Evermore':
     st.image('logos/evermore.png')
     albumts = "evermore (deluxe version)"
@@ -109,11 +89,6 @@ def albums():
     st.write(f"Canciones del álbum: {albumts}\n")
     for index, row in canciones.iterrows():
       st.write(f"{row['track_number']}.- {row['name']}")
-    embed_code = """
-    <iframe src="https://open.spotify.com/embed/album/6AORtDjduMM3bupSWzbTSG?utm_source=generator" width="900" height="380" frameBorder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-    """
-    st.subheader('Escucha el álbum aquí:')
-    st.components.v1.html(embed_code, height=400)
   elif alb == 'Midnights':
     st.image('logos/midnights.png')
     albumts = "Midnights (The Til Dawn Edition)"
@@ -121,11 +96,6 @@ def albums():
     st.write(f"Canciones del álbum: {albumts}\n")
     for index, row in canciones.iterrows():
       st.write(f"{row['track_number']}.- {row['name']}")
-    embed_code = """
-    <iframe src="https://open.spotify.com/embed/album/1fnJ7k0bllNfL1kVdNVW1A?utm_source=generator" width="900" height="380" frameBorder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-    """
-    st.subheader('Escucha el álbum aquí:')
-    st.components.v1.html(embed_code, height=400)
   elif alb == 'The Tortured Poets Department':
     st.image('logos/ttpd.png')
     albumts = "THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY"
@@ -133,9 +103,4 @@ def albums():
     st.write(f"Canciones del álbum: {albumts}\n")
     for index, row in canciones.iterrows():
       st.write(f"{row['track_number']}.- {row['name']}")
-    embed_code = """
-    <iframe src="https://open.spotify.com/embed/album/5H7ixXZfsNMGbIE5OBSpcb?utm_source=generator" width="900" height="380" frameBorder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-    """
-    st.subheader('Escucha el álbum aquí:')
-    st.components.v1.html(embed_code, height=400)
     
