@@ -19,10 +19,6 @@ def albums():
     st.write(f"Canciones del álbum: {albumts}\n")
     for index, row in canciones.iterrows():
       st.write(f"{row['track_number']}.- {row['name']}"})
-    embed_code = """
-    <iframe src="https://open.spotify.com/intl-es/album/5eyZZoQEFQWRHkV2xgAeBw" width="300" height="380" frameBorder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-    """
-    st.components.v1.html(embed_code, height=400)
   elif alb == 'Fearless':
     st.image('logos/fearless.png')
     albumts = "Fearless (Taylor's Version)"
