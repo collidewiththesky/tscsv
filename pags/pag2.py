@@ -61,13 +61,13 @@ def albums():
     st.components.v1.html(embed_code, height=400)
   elif alb == '1989':
     st.image('logos/1989tv.png')
-    albumts = "1989 (Taylor's Version)"
+    albumts = "1989 (Taylor's Version) [Deluxe]"
     canciones = df.loc[df['album'] == albumts]
     st.write(f"Canciones del álbum: {albumts}\n")
     for index, row in canciones.iterrows():
       st.write(f"{row['track_number']}.- {row['name']}")
     embed_code = """
-    <iframe src="https://open.spotify.com/embed/album/64LU4c1nfjz1t4VnGhagcg?utm_source=generator" width="900" height="380" frameBorder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+    <iframe src="https://open.spotify.com/embed/album/1o59UpKw81iHR0HPiSkJR0?utm_source=generator" width="900" height="380" frameBorder="0" allowTransparency="true" allow="encrypted-media"></iframe>
     """
     st.subheader('Escucha el álbum aquí:')
     st.components.v1.html(embed_code, height=400)
