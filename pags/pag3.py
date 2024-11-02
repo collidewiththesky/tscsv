@@ -69,7 +69,7 @@ def analisis():
             'data': pivot_df[album].tolist(),
             'smooth': True,
             'itemStyle': {
-                'color': kolors[i % len(colors)] 
+                'color': kolors[i % len(kolors)] 
             }
         })
     st.subheader('Popularidad de Canciones por Álbum')
