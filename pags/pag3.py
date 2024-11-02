@@ -97,4 +97,5 @@ def analisis():
         "data": pba["popularity"].tolist()
         }]
     }
+    st.subheader('Popularidad Promedio de los Álbumes')
     st_echarts(options=gbarra,height='600px')
