@@ -33,7 +33,7 @@ def analisis():
                 },
             }
         ],
-        #"color": ["beige", "blue", "green", "pink","purple","goldenrod","fuchsia","yellow","orange","brown"]
+        "color": ["beige", "blue", "green", "pink","purple","goldenrod","fuchsia","yellow","orange","brown"]
     }
     st_echarts(
         options=options, height="600px",
