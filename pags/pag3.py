@@ -70,4 +70,4 @@ def analisis():
             'data': pivot_df[album].tolist(),
             'smooth': True
         })
-    st_echarts(options=chart_data)
+    st_echarts(options=chart_data,height="400px")
