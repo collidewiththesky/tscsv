@@ -75,7 +75,9 @@ def analisis():
     st.subheader('Popularidad de Canciones por Álbum')
     st_echarts(options=glinea,height='600px')
     #Grafico 3
-    popularity_by_album = df.groupby('album')['popularity'].mean().reset_index()
+    
+    fd3 = df[df['album'].isin(albs)]
+    popularity_by_album = fd3.groupby('album')['popularity'].mean().reset_index()
     
     # Configurar el gráfico de barras
     option = {
@@ -102,5 +104,5 @@ def analisis():
     }
     
     # Mostrar el gráfico en Streamlit
-    st.title("Gráfico de Popularidad Promedio por Álbum")
-    st_echarts(options=option)
+    st.title("Gráfico de Popularidad Promedio por Álbum (Álbumes Específicos)")
+    st_echarts(option=option)
