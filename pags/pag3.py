@@ -68,7 +68,7 @@ def analisis():
             'stack': 'total',
             'data': pivot_df[album].tolist(),
             'smooth': True,
-            'lineStyle': {
+            'itemStyle': {
                 'color': kolors
             }
         })
