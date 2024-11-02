@@ -39,3 +39,29 @@ def analisis():
         options=options, height="600px",
     )
 
+
+    # Agrupar por álbum y calcular la media de popularidad
+    popularidad = df.groupby('album')['popularity'].mean().reset_index()
+    
+    # Crear el gráfico de líneas
+    option = {
+        "title": {"text": "Popularidad de Canciones por Álbum"},
+        "tooltip": {},
+        "xAxis": {
+            "type": "category",
+            "data": fd['album'].tolist()
+        },
+        "yAxis": {"type": "value"},
+        "series": [
+            {
+                "name": "Popularidad",
+                "type": "line",
+                "data": fd['popularity'].tolist(),
+                "smooth": True
+            }
+        ]
+    }
+    
+    # Mostrar el gráfico
+    st_echarts(options=option)
+
