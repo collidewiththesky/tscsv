@@ -86,7 +86,7 @@ def analisis():
         },
         'grid': {'containLabel': True},
         'xAxis': {'name': 'amount'},
-        'yAxis': {'type': 'category'},
+        'yAxis': {'type': album},
         'visualMap': {
             'orient': 'horizontal',
             'left': 'center',
@@ -103,7 +103,7 @@ def analisis():
                 'type': 'bar',
                 'encode': {
                     'x': 'amount',
-                    'y': 'product'
+                    'y': album
                 }
             }
         ]
