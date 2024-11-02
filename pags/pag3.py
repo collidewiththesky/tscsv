@@ -38,8 +38,9 @@ def analisis():
     #Grafico 2
     fd2 = df[df['album'].isin(albs)]
     pivot_df = fd2.pivot(index='track_number', columns='album', values='popularity').fillna(0)
+    
+    # Prepare the data for ECharts
     chart_data = {
-        'title':'Popularidad de Canciones por Álbum',
         'tooltip': {
             'trigger': 'axis',
             'axisPointer': {
@@ -58,6 +59,8 @@ def analisis():
         },
         'series': []
     }
+    
+    # Add series for each selected album
     for album in pivot_df.columns:
         chart_data['series'].append({
             'name': album,
@@ -66,4 +69,6 @@ def analisis():
             'data': pivot_df[album].tolist(),
             'smooth': True
         })
-    st_echarts(options=chart_data,height="400px")
+    
+    # Render the chart in Streamlit
+    st_echarts(options=chart_data)
