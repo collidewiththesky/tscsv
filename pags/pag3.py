@@ -60,7 +60,7 @@ def analisis():
         },
         'series': []
     }
-    kolors = ['#FF5733', '#33FF57', '#3357FF']
+    kolors = ["lightskyblue", "gold", "hotpink","steelblue","purple","beige","limegreen","sienna","silver","dimgray"]
     for album in pivot_df.columns:
         glinea['series'].append({
             'name': album,
@@ -68,7 +68,7 @@ def analisis():
             'stack': 'total',
             'data': pivot_df[album].tolist(),
             'smooth': True,
-            'itemStyle': {
+            'lineStyle': {
                 'color': kolors
             }
         })
