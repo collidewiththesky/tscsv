@@ -96,10 +96,10 @@ def analisis():
     "visualMap": {
         "orient": 'horizontal',
         "left": 'center',
-        "min": 0,
-        "max": 10,
+        "min": 10,
+        "max": 100,
         "dimension": 0,
-        "color": ["lightskyblue", "gold", "hotpink","steelblue","purple","beige","limegreen","sienna","silver","dimgray"]
+        "color": ['#65B581', '#FFCE34', '#FD665F']
     },
     "series": [{
         "name": "popularity",
