@@ -8,7 +8,6 @@ def analisis():
   ab = df[df['album'].isin(albs)]
   cpa = ab['album'].value_counts()
   colores = ['yellow','red','green','lightskyblue','mediumpurple','hotpink','peru','silver','dimgray','limegreen']
-  data_filtrada = data[data['album'].isin(albumes_seleccionados)]
   st.title('Porcentaje de Canciones por Álbumes')
 
   grafikito = {
