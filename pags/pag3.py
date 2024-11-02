@@ -1,8 +1,6 @@
 import pandas as pd
 import streamlit as st
 from streamlit_echarts import st_echarts
-from pyecharts import options as opts
-from pyecharts.charts import Bar
 
 def analisis():
     st.title('Análisis gráfico')
@@ -40,8 +38,6 @@ def analisis():
     #Grafico 2
     fd2 = df[df['album'].isin(albs)]
     pivot_df = fd2.pivot(index='track_number', columns='album', values='popularity').fillna(0)
-    
-    # Prepare the data for ECharts
     glinea = {
         'tooltip': {
             'trigger': 'axis',
@@ -76,15 +72,9 @@ def analisis():
     st.subheader('Popularidad de Canciones por Álbum')
     st_echarts(options=glinea,height='600px')
     #Grafico 3
-    
     fd3 = df[df['album'].isin(albs)]
     pba = fd3.groupby('album')['popularity'].mean().reset_index()
-    option = {
-    "title": {
-        "text": "Popularidad Promedio de Álbumes Filtrados",
-        "subtext": "Datos de Taylor Swift",
-        "left": "center"
-    },
+    gbarra = {
     "tooltip": {},
     "xAxis": {
         "type": "value"
@@ -107,6 +97,4 @@ def analisis():
         "data": pba["popularity"].tolist()
         }]
     }
-    
-    # Mostrar el gráfico en Streamlit
-    st_echarts(options=option,height='600px')
+    st_echarts(options=gbarra,height='600px')
