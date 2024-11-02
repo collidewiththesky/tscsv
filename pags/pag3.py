@@ -97,7 +97,7 @@ def analisis():
         "orient": 'horizontal',
         "left": 'center',
         "min": 50,
-        "max": 100,
+        "max": 90,
         "dimension": 0,
         "color": ['#65B581', '#FFCE34', '#FD665F']
     },
