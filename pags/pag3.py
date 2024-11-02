@@ -60,7 +60,7 @@ def analisis():
         },
         'series': []
     }
-    kolors = ["#FF00FF", "#FF00FF", "#FF00FF","#FF00FF","#FF00FF","#FF00FF","#FF00FF","#FF00FF","#FF00FF","#FF00FF"]
+    kolors = ["lightskyblue", "gold", "hotpink","steelblue","purple","beige","limegreen","sienna","silver","dimgray"]
     for i, album in enumerate(pivot_df.columns):
         glinea['series'].append({
             'name': album,
