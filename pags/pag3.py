@@ -94,12 +94,12 @@ def analisis():
         },
         "yAxis": {
             "type": "category",
-            "data": fd3["Album"].tolist()
+            "data": fd3["album"].tolist()
         },
         "series": [{
             "name": "Popularidad",
             "type": "bar",
-            "data": fd3["Popularidad"].tolist(),
+            "data": fd3["popularity"].tolist(),
             "itemStyle": {
                 "color": {
                     "type": "linear",
