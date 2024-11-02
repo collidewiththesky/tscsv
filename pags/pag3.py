@@ -62,7 +62,7 @@ def analisis():
     
     # Add series for each selected album
     for album in pivot_df.columns:
-        chart_data['series'].append({
+        glinea['series'].append({
             'name': album,
             'type': 'line',
             'stack': 'total',
