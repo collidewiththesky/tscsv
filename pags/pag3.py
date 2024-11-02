@@ -36,9 +36,9 @@ def analisis():
                       "shadowOffsetX": 0,
                       "shadowColor": "rgba(0, 0, 0, 0.5)"
                   }
-              }
+              },
           }
-      ]
+      ],
   }
   
   # Mostrar el gráfico en Streamlit
