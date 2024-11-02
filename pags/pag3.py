@@ -93,7 +93,7 @@ def analisis():
         "color": ['hotpink','lightskyblue']
     },
     "series": [{
-        "name": "popularity",
+        "name": "Popularidad",
         "type": "bar",
         "data": pba["popularity"].tolist()
         }]
