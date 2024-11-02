@@ -13,7 +13,7 @@ def analisis():
   st.title('Porcentaje de Canciones por Álbumes')
 
   options = {
-      "title": {"text": "某站点用户访问来源", "subtext": "纯属虚构", "left": "center"},
+      "title": {"text": "Canciones por Álbums", "left": "center"},
       "tooltip": {"trigger": "item"},
       "legend": {"orient": "vertical", "left": "left",},
       "series": [
