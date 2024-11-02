@@ -20,7 +20,7 @@ def analisis():
   st.title('Número de Canciones por Álbumes Seleccionados de Taylor Swift')
   
   # Crear el gráfico de torta con st_echarts
-  option = {
+  options = {
       "title": {"text": "si", "subtext": "b", "left": "center"},
       "tooltip": {"trigger": "item"},
       "legend": {"orient": "vertical", "left": "left",},
@@ -42,4 +42,7 @@ def analisis():
   }
   
   # Mostrar el gráfico en Streamlit
-  st_echarts(option=option)
+  st_echarts(
+        options=options, height="500px",
+    )
+
