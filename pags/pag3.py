@@ -5,7 +5,7 @@ from streamlit_echarts import st_echarts
 
 def analisis():
     df = pd.read_csv('taylor_swift_spotify.csv')
-    albumes_a_incluir = ['Fearless (Platinum Edition)', 'Taylor Swift (Deluxe Edition)']
+    albumes_a_incluir = ["Taylor Swift (Deluxe Edition)","Fearless (Taylor's Version)","Speak Now (Taylor's Version)", "Red (Taylor's Version","1989 (Taylor's Version) [Deluxe]","reputation","Lover","folklore (deluxe version)","evermore (deluxe version)","Midnights (The Til Dawn Edition)","THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY"]
 
 # Filtrar el DataFrame para incluir solo esos álbumes
     df_filtrado = df[df['album'].isin(albumes_a_incluir)]
