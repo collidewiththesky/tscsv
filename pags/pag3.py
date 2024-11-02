@@ -92,14 +92,18 @@ def analisis():
     "yAxis": {
         "type": "category",
         "data": pba["album"].tolist()
+    "visualMap": {
+        "orient": 'horizontal',
+        "left": 'center',
+        "dimension": 0,
+        "inRange": {
+          "color": kolors
+        }
     },
     "series": [{
         "name": "popularity",
         "type": "bar",
-        "data": pba["popularity"].tolist(),
-        "itemStyle": {
-            "color": "hotpink"
-            }
+        "data": pba["popularity"].tolist()
         }]
     }
     
