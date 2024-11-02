@@ -80,7 +80,7 @@ def analisis():
     popularity_by_album = fd3.groupby('album')['popularity'].mean().reset_index()
     
     # Listado de colores para las barras
-    colors = ["#69b3a2", "#ff6347", "#ffa07a", "#20b2aa", "#9370db"]  # Añade más colores si es necesario
+    colors = ["#69b3a2", "#ff6347"]  # Define un color por cada álbum específico
     
     # Configurar el gráfico de barras
     option = {
@@ -101,20 +101,11 @@ def analisis():
             "type": "bar",
             "data": popularity_by_album['popularity'].tolist(),
             "itemStyle": {
-                "color": {
-                    "type": "linear",
-                    "x": 0,
-                    "y": 0,
-                    "x2": 1,
-                    "y2": 1,
-                    "colorStops": [
-                        {"offset": 0, "color": colors[i % len(colors)]} for i in range(len(popularity_by_album))
-                    ]
-                }
+                "color": lambda params: colors[params.dataIndex]  # Color por índice de dato
             }
         }]
     }
     
     # Mostrar el gráfico en Streamlit
     st.title("Gráfico de Popularidad Promedio por Álbum (Álbumes Específicos)")
-    st_echarts(options=option)
+    st_echarts(option=option)
