@@ -88,6 +88,7 @@ def analisis():
         "left": 'center',
         "min": 50,
         "max": 90,
+        "text":['Min','Max']
         "dimension": 0,
         "color": ['hotpink','lightskyblue']
     },
