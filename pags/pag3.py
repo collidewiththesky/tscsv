@@ -35,8 +35,11 @@ def analisis():
         options=options, height="600px",
     )
     # Agrupar por álbum y calcular la media de popularidad
-    pivot_df = df.pivot(index='name', columns=cpa, values='popularity').fillna(0)
-
+    fd2 = df[df['album'].isin(albs)]
+    
+    # Pivot the DataFrame for a stacked line graph
+    pivot_df = fd2.pivot(index='name', columns='album', values='popularity').fillna(0)
+    
     # Prepare the data for ECharts
     chart_data = {
         'tooltip': {
@@ -57,6 +60,8 @@ def analisis():
         },
         'series': []
     }
+    
+    # Add series for each selected album
     for album in pivot_df.columns:
         chart_data['series'].append({
             'name': album,
@@ -66,4 +71,3 @@ def analisis():
             'smooth': True
         })
     st_echarts(options=chart_data)
-    
