@@ -82,34 +82,32 @@ def analisis():
     # Configurar el gráfico de barras
     option = {
         'dataset': {
-        'source': [
-            ['popularity', 'album'],
-        ] + fd3[['popularity', 'album']].values.tolist()  # Añadir datos
+        'source': popularity_by_album.values.tolist()
         },
         'grid': {'containLabel': True},
-        'xAxis': {'name': 'Popularity'},
+        'xAxis': {'name': 'amount'},
         'yAxis': {'type': 'category'},
         'visualMap': {
             'orient': 'horizontal',
             'left': 'center',
-            'min': 0,
-            'max': 100,
-            'text': ['High Popularity', 'Low Popularity'],
-            'dimension': 0,  # Usar la columna de popularidad para el mapeo
+            'min': 0,  # Ajusta según tus datos
+            'max': 100,  # Ajusta según tus datos
+            'text': ['High Score', 'Low Score'],
+            'dimension': 0,
             'inRange': {
-                'color': ['#65B581', '#FFCE34', '#FD665F']  # Colores para el rango de popularidad
+                'color': ['#65B581', '#FFCE34', '#FD665F']
             }
         },
         'series': [
             {
                 'type': 'bar',
                 'encode': {
-                    'x': 'popularity',  # Mapear popularidad al eje X
-                    'y': 'album'  # Mapear álbum al eje Y
-                    }
+                    'x': 'amount',
+                    'y': 'product'
                 }
-            ]
-        }
+            }
+        ]
+    }
     
-    # Mostrar en Streamlit
-    st_pyecharts(option)
+    # Renderizar el gráfico en Streamlit
+    st_echarts(options=option)
