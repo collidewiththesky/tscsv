@@ -77,17 +77,17 @@ def analisis():
     #Grafico 3
     
     fd3 = df[df['album'].isin(albs)]
-    popularity_by_album = fd3.groupby('album')['popularity'].mean().reset_index()
+    popalb = fd3.groupby('album')['popularity'].mean().reset_index()
     
     # Configurar el gráfico de barras
     option = {
         "title": {
-            "text": "Popularidad Promedio por Álbum de Taylor Swift"
+            "text": "Popularidad Promedio por Álbum"
         },
         "tooltip": {},
         "xAxis": {
             "type": "category",
-            "data": popularity_by_album['album'].tolist()
+            "data": popalb['album'].tolist()
         },
         "yAxis": {
             "type": "value",
@@ -96,9 +96,9 @@ def analisis():
         "series": [{
             "name": "Popularidad",
             "type": "bar",
-            "data": popularity_by_album['popularity'].tolist(),
+            "data": popalb['popularity'].tolist(),
             "itemStyle": {
-                "color": "#69b3a2"  # Color de las barras
+                "color": kolors  # Color de las barras
             }
         }]
     }
