@@ -79,35 +79,39 @@ def analisis():
     
     fd3 = df[df['album'].isin(albs)]
     popularity_by_album = fd3.groupby('album')['popularity'].mean().reset_index()
-    # Configurar el gráfico de barras
+    colors = ["#FF5733", "#33FF57", "#3357FF", "#F39C12"]  # Añade más colores si es necesario
+    
+    # Configuración del gráfico
     option = {
-        'dataset': {
-        'source': popularity_by_album.values.tolist()
+        "title": {
+            "text": "Popularidad Promedio de Álbumes Filtrados",
+            "subtext": "Datos de Taylor Swift",
+            "left": "center"
         },
-        'grid': {'containLabel': True},
-        'xAxis': {'name': 'amount'},
-        'yAxis': {'type': album},
-        'visualMap': {
-            'orient': 'horizontal',
-            'left': 'center',
-            'min': 0,  # Ajusta según tus datos
-            'max': 100,  # Ajusta según tus datos
-            'text': ['High Score', 'Low Score'],
-            'dimension': 0,
-            'inRange': {
-                'color': ['#65B581', '#FFCE34', '#FD665F']
-            }
+        "tooltip": {},
+        "xAxis": {
+            "type": "value"
         },
-        'series': [
-            {
-                'type': 'bar',
-                'encode': {
-                    'x': 'amount',
-                    'y': album
+        "yAxis": {
+            "type": "category",
+            "data": fd3["Album"].tolist()
+        },
+        "series": [{
+            "name": "Popularidad",
+            "type": "bar",
+            "data": fd3["Popularidad"].tolist(),
+            "itemStyle": {
+                "color": {
+                    "type": "linear",
+                    "x": 0,
+                    "y": 0,
+                    "x2": 1,
+                    "y2": 1,
+                    "colorStops": [{"offset": i / len(colors), "color": colors[i]} for i in range(len(fd3))]
                 }
             }
-        ]
+        }]
     }
     
-    # Renderizar el gráfico en Streamlit
+    # Mostrar el gráfico en Streamlit
     st_echarts(options=option)
