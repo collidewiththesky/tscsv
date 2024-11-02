@@ -61,7 +61,7 @@ def analisis():
         'series': []
     }
     kolors = ["#FF00FF", "#FF00FF", "#FF00FF","#FF00FF","#FF00FF","#FF00FF","#FF00FF","#FF00FF","#FF00FF","#FF00FF"]
-    for album in pivot_df.columns:
+    for i, album in enumerate(pivot_df.columns):
         glinea['series'].append({
             'name': album,
             'type': 'line',
@@ -69,7 +69,7 @@ def analisis():
             'data': pivot_df[album].tolist(),
             'smooth': True,
             'itemStyle': {
-                'color': kolors
+                'color': kolors[i % len(kolors)]
             }
         })
     st.subheader('Popularidad de Canciones por Álbum')
