@@ -4,7 +4,7 @@ import streamlit as st
 from streamlit_echarts import st_echarts
 
 def analisis():
-  options = {
+    options = {
         "title": {"text": "某站点用户访问来源", "subtext": "纯属虚构", "left": "center"},
         "tooltip": {"trigger": "item"},
         "legend": {"orient": "vertical", "left": "left",},
@@ -33,3 +33,4 @@ def analisis():
     st_echarts(
         options=options, height="600px",
     )
+
