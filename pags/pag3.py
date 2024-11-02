@@ -22,7 +22,7 @@ def analisis():
                 "name": "访问来源",
                 "type": "pie",
                 "radius": "50%",
-                "data": album_counts.to_dict(orient='records'),
+                "data": album_counts,
                 "emphasis": {
                     "itemStyle": {
                         "shadowBlur": 10,
