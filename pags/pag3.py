@@ -8,6 +8,7 @@ def analisis():
   albs = ["Taylor Swift (Deluxe Edition)","Fearless (Taylor's Version)","Speak Now (Taylor's Version)", "Red (Taylor's Version","1989 (Taylor's Version) [Deluxe]","reputation","Lover","folklore (deluxe version)","evermore (deluxe version)","Midnights (The Til Dawn Edition)","THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY"]
   ab = df[df['album'].isin(albs)]
   cpa = ab['album'].value_counts().reset_index()
+  cpa.columns = ['album', 'canciones']
   colores = ['yellow','red','green','lightskyblue','mediumpurple','hotpink','peru','silver','dimgray','limegreen']
   st.title('Porcentaje de Canciones por Álbumes')
 
