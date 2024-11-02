@@ -74,3 +74,33 @@ def analisis():
         })
     st.subheader('Popularidad de Canciones por Álbum')
     st_echarts(options=glinea,height='600px')
+    #Grafico 3
+    popularity_by_album = df.groupby('album')['popularity'].mean().reset_index()
+    
+    # Configurar el gráfico de barras
+    option = {
+        "title": {
+            "text": "Popularidad Promedio por Álbum de Taylor Swift"
+        },
+        "tooltip": {},
+        "xAxis": {
+            "type": "category",
+            "data": popularity_by_album['album'].tolist()
+        },
+        "yAxis": {
+            "type": "value",
+            "name": "Popularidad Promedio"
+        },
+        "series": [{
+            "name": "Popularidad",
+            "type": "bar",
+            "data": popularity_by_album['popularity'].tolist(),
+            "itemStyle": {
+                "color": "#69b3a2"  # Color de las barras
+            }
+        }]
+    }
+    
+    # Mostrar el gráfico en Streamlit
+    st.title("Gráfico de Popularidad Promedio por Álbum")
+    st_echarts(option=option)
