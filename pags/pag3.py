@@ -32,7 +32,9 @@ def analisis():
         ],
         "color": ["lightskyblue", "gold", "hotpink","steelblue","purple","beige","limegreen","sienna","silver","dimgray"]
     }
-    st_echarts(options=options, height="600px")
+    st_echarts(
+        options=options, height="600px",
+    )
     #Grafico 2
     fd2 = df[df['album'].isin(albs)]
     pivot_df = fd2.pivot(index='track_number', columns='album', values='popularity').fillna(0)
