@@ -35,24 +35,35 @@ def analisis():
         options=options, height="600px",
     )
     # Agrupar por álbum y calcular la media de popularidad
-    fd2 = df[df['album'].isin(albs)]
-    popularidad = df.groupby('album')['popularity'].mean().reset_index()
-    option = {
-        "title": {"text": "Popularidad de Canciones por Álbum"},
-        "tooltip": {},
-        "xAxis": {
-            "type": "category",
-            "data": fd2['album'].tolist()
-        },
-        "yAxis": {"type": "value"},
-        "series": [
-            {
-                "name": "Popularidad",
-                "type": "line",
-                "data": fd['popularity'].tolist(),
-                "smooth": True
-            }
-        ]
-    }
-    st_echarts(options=option)
+    pivot_df = df.pivot(index='name', columns='album', values='popularity').fillna(0)
 
+    # Prepare the data for ECharts
+    chart_data = {
+        'tooltip': {
+            'trigger': 'axis',
+            'axisPointer': {
+                'type': 'line'
+            }
+        },
+        'legend': {
+            'data': pivot_df.columns.tolist()
+        },
+        'xAxis': {
+            'type': 'category',
+            'data': pivot_df.index.tolist()
+        },
+        'yAxis': {
+            'type': 'value'
+        },
+        'series': []
+    }
+    for album in pivot_df.columns:
+        chart_data['series'].append({
+            'name': album,
+            'type': 'line',
+            'stack': 'total',
+            'data': pivot_df[album].tolist(),
+            'smooth': True
+        })
+    st_echarts(options=chart_data)
+    
