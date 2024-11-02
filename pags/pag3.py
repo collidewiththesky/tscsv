@@ -6,11 +6,7 @@ from streamlit_echarts import st_echarts
 def analisis():
     df = pd.read_csv('taylor_swift_spotify.csv')
     albs = ["Taylor Swift (Deluxe Edition)","Fearless (Taylor's Version)","Speak Now (Taylor's Version)", "Red (Taylor's Version","1989 (Taylor's Version) [Deluxe]","reputation","Lover","folklore (deluxe version)","evermore (deluxe version)","Midnights (The Til Dawn Edition)","THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY"]
-
-# Filtrar el DataFrame para incluir solo esos álbumes
     fd = df[df['album'].isin(albs)]
-
-# Agrupar los datos para obtener el número de canciones por álbum
     cpa = fd.groupby('album').size().reset_index(name='canciones')
     labels = cpa['album'].tolist()
     values = cpa['canciones'].tolist()
@@ -38,18 +34,15 @@ def analisis():
     st_echarts(
         options=options, height="600px",
     )
-
-
     # Agrupar por álbum y calcular la media de popularidad
+    fd2 = df[df['album'].isin(albs)]
     popularidad = df.groupby('album')['popularity'].mean().reset_index()
-    
-    # Crear el gráfico de líneas
     option = {
         "title": {"text": "Popularidad de Canciones por Álbum"},
         "tooltip": {},
         "xAxis": {
             "type": "category",
-            "data": fd['album'].tolist()
+            "data": fd2['album'].tolist()
         },
         "yAxis": {"type": "value"},
         "series": [
@@ -61,7 +54,5 @@ def analisis():
             }
         ]
     }
-    
-    # Mostrar el gráfico
     st_echarts(options=option)
 
