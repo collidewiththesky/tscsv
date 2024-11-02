@@ -14,7 +14,7 @@ def analisis():
     cpa = fd.groupby('album').size().reset_index(name='canciones')
     labels = cpa['album'].tolist()
     values = cpa['canciones'].tolist()
-    grafikito = {
+    options = {
         "title": {"text": "Porcentaje de Canciones por Álbum", "left": "center"},
         "tooltip": {"trigger": "item"},
         "legend": {"orient": "vertical", "left": "left",},
@@ -36,6 +36,6 @@ def analisis():
         #"color": ["beige", "blue", "green", "pink","purple","goldenrod","fuchsia","yellow","orange","brown"]
     }
     st_echarts(
-        grafikito=grafikito, height="600px",
+        options=options, height="600px",
     )
 
