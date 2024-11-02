@@ -12,6 +12,8 @@ def analisis():
 
 # Agrupar los datos para obtener el número de canciones por álbum
     album_counts = df_filtrado.groupby('album').size().reset_index(name='canciones')
+    labels = album_counts['album'].tolist()
+    values = album_counts['canciones'].tolist()
     options = {
         "title": {"text": "Porcentaje de Canciones por Álbum", "left": "center"},
         "tooltip": {"trigger": "item"},
