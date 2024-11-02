@@ -38,4 +38,4 @@ def analisis():
           }
       ]
   }
-  st_echarts(option=option)
+  st_echarts(grafikito=grafikito)
