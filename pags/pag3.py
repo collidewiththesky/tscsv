@@ -96,8 +96,8 @@ def analisis():
     "visualMap": {
         "orient": 'horizontal',
         "left": 'center',
-        "min": 10,
-        "max": 100,
+        "min": 1,
+        "max": 10,
         "dimension": 0,
         "color": ["lightskyblue", "gold", "hotpink","steelblue","purple","beige","limegreen","sienna","silver","dimgray"]
     },
