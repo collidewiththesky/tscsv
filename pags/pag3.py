@@ -39,7 +39,7 @@ def analisis():
     fd2 = df[df['album'].isin(albs)]
     pivot_df = fd2.pivot(index='track_number', columns='album', values='popularity').fillna(0)
     chart_data = {
-        'title':'Popularidad de Canciones por Álbum'
+        'title':'Popularidad de Canciones por Álbum',
         'tooltip': {
             'trigger': 'axis',
             'axisPointer': {
