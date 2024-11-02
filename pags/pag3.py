@@ -11,7 +11,7 @@ def analisis():
     cpa = fd.groupby('album').size().reset_index(name='canciones')
     labels = cpa['album'].tolist()
     values = cpa['canciones'].tolist()
-    gpie = {
+    options = {
         "title": {"text": "Porcentaje de Canciones por Álbum", "left": "center"},
         "tooltip": {"trigger": "item"},
         "legend": {"orient": "vertical", "left": "left",},
@@ -32,11 +32,11 @@ def analisis():
         ],
         "color": ["lightskyblue", "gold", "hotpink","steelblue","purple","beige","limegreen","sienna","silver","dimgray"]
     }
-    st_echarts(options=gpie, height="600px")
+    st_echarts(options=options, height="600px")
     #Grafico 2
     fd2 = df[df['album'].isin(albs)]
     datitos = fd2.pivot(index='track_number', columns='album', values='popularity').fillna(0)
-    glinea = {
+    opsion = {
         'title':'Popularidad de Canciones por Álbum'
         'tooltip': {
             'trigger': 'axis',
@@ -57,11 +57,11 @@ def analisis():
         'series': []
     }
     for album in datitos.columns:
-        glinea['series'].append({
+        opsion['series'].append({
             'name': album,
             'type': 'line',
             'stack': 'total',
             'data': datitos[album].tolist(),
             'smooth': True
         })
-    st_echarts(options=glinea,height="400px")
+    st_echarts(options=opsion,height="400px")
