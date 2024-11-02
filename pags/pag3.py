@@ -35,7 +35,7 @@ def analisis():
         options=options, height="600px",
     )
     # Agrupar por álbum y calcular la media de popularidad
-    pivot_df = df.pivot(index='name', columns=fd, values='popularity').fillna(0)
+    pivot_df = df.pivot(index='name', columns=cpa, values='popularity').fillna(0)
 
     # Prepare the data for ECharts
     chart_data = {
