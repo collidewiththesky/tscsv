@@ -35,8 +35,8 @@ def analisis():
     st_echarts(options=options, height="600px")
     #Grafico 2
     fd2 = df[df['album'].isin(albs)]
-    datitos = fd2.pivot(index='track_number', columns='album', values='popularity').fillna(0)
-    opsion = {
+    pivot_df = fd2.pivot(index='track_number', columns='album', values='popularity').fillna(0)
+    chart_data = {
         'title':'Popularidad de Canciones por Álbum'
         'tooltip': {
             'trigger': 'axis',
@@ -45,23 +45,23 @@ def analisis():
             }
         },
         'legend': {
-            'data': datitos.columns.tolist()
+            'data': pivot_df.columns.tolist()
         },
         'xAxis': {
             'type': 'category',
-            'data': datitos.index.tolist()
+            'data': pivot_df.index.tolist()
         },
         'yAxis': {
             'type': 'value'
         },
         'series': []
     }
-    for album in datitos.columns:
-        opsion['series'].append({
+    for album in pivot_df.columns:
+        chart_data['series'].append({
             'name': album,
             'type': 'line',
             'stack': 'total',
-            'data': datitos[album].tolist(),
+            'data': pivot_df[album].tolist(),
             'smooth': True
         })
-    st_echarts(options=opsion,height="400px")
+    st_echarts(options=chart_data,height="400px")
