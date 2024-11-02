@@ -11,7 +11,7 @@ def analisis():
     data_filtrada = data[data['album'].isin(albumes_seleccionados)]
 
     # Contar el número de canciones por álbum
-    album_counts = df.to_dict(orient='records')
+    album_counts = data.to_dict(orient='records')
 
     # Preparar los datos para el gráfico de torta
     labels = [album['album'] for album in album_counts]
