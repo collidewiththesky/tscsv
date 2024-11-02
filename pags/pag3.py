@@ -70,6 +70,5 @@ def analisis():
             'data': pivot_df[album].tolist(),
             'smooth': True
         })
-    
-    # Render the chart in Streamlit
+    st.subheader('Popularidad de Canciones por Álbum')
     st_echarts(options=glinea,height='600px')
