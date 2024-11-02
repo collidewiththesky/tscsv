@@ -99,7 +99,7 @@ def analisis():
         "min": 50,
         "max": 90,
         "dimension": 0,
-        "color": ['#65B581', '#FFCE34', '#FD665F']
+        "color": ['hotpink','lightskyblue']
     },
     "series": [{
         "name": "popularity",
