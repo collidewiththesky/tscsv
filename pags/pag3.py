@@ -77,17 +77,20 @@ def analisis():
     #Grafico 3
     
     fd3 = df[df['album'].isin(albs)]
-    popalb = fd3.groupby('album')['popularity'].mean().reset_index()
+    popularity_by_album = fd3.groupby('album')['popularity'].mean().reset_index()
+    
+    # Listado de colores para las barras
+    colors = ["#69b3a2", "#ff6347", "#ffa07a", "#20b2aa", "#9370db"]  # Añade más colores si es necesario
     
     # Configurar el gráfico de barras
     option = {
         "title": {
-            "text": "Popularidad Promedio por Álbum"
+            "text": "Popularidad Promedio por Álbum de Taylor Swift"
         },
         "tooltip": {},
         "xAxis": {
             "type": "category",
-            "data": popalb['album'].tolist()
+            "data": popularity_by_album['album'].tolist()
         },
         "yAxis": {
             "type": "value",
@@ -96,12 +99,22 @@ def analisis():
         "series": [{
             "name": "Popularidad",
             "type": "bar",
-            "data": popalb['popularity'].tolist(),
+            "data": popularity_by_album['popularity'].tolist(),
             "itemStyle": {
-                "color": kolors[i % len(kolors)]
+                "color": {
+                    "type": "linear",
+                    "x": 0,
+                    "y": 0,
+                    "x2": 1,
+                    "y2": 1,
+                    "colorStops": [
+                        {"offset": 0, "color": colors[i % len(colors)]} for i in range(len(popularity_by_album))
+                    ]
+                }
             }
         }]
     }
+    
     # Mostrar el gráfico en Streamlit
     st.title("Gráfico de Popularidad Promedio por Álbum (Álbumes Específicos)")
-    st_echarts(options=option)
+    st_echarts(option=option)
