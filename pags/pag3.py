@@ -10,7 +10,7 @@ def analisis():
   colores = ['yellow','red','green','lightskyblue','mediumpurple','hotpink','peru','silver','dimgray','limegreen']
   st.title('Porcentaje de Canciones por Álbumes')
 
-  grafikito = {
+  option = {
       "title": {
           "text": "Número de Canciones por Álbum",
           "left": "center"
@@ -38,4 +38,4 @@ def analisis():
           }
       ]
   }
-  st_echarts(grafikito=grafikito)
+  st_echarts(option=option)
