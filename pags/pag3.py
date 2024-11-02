@@ -78,10 +78,6 @@ def analisis():
     
     fd3 = df[df['album'].isin(albs)]
     popularity_by_album = fd3.groupby('album')['popularity'].mean().reset_index()
-    
-    # Listado de colores para las barras
-    colors = ["#69b3a2", "#ff6347"]  # Define un color por cada álbum específico
-    
     # Configurar el gráfico de barras
     option = {
         "title": {
@@ -101,7 +97,7 @@ def analisis():
             "type": "bar",
             "data": popularity_by_album['popularity'].tolist(),
             "itemStyle": {
-                "color": lambda params: colors[params.dataIndex]  # Color por índice de dato
+                "color": "hotpink"
             }
         }]
     }
