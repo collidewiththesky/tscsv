@@ -98,7 +98,15 @@ def analisis():
             "type": "bar",
             "data": popalb['popularity'].tolist(),
             "itemStyle": {
-                "color": lambda params: kolors[params.dataIndex]   # Color de las barras
+                "color": {
+                    "type": "linear",
+                    "x": 0,
+                    "y": 0,
+                    "x2": 1,
+                    "y2": 1,
+                    "colorStops": [
+                        {"offset": 0, "color": kolors[i % len(kolors)]} for i in range(len(popalb))
+                   ]
             }
         }]
     }
