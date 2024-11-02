@@ -108,4 +108,4 @@ def analisis():
     
     # Mostrar el gráfico en Streamlit
     st.title("Gráfico de Popularidad Promedio por Álbum (Álbumes Específicos)")
-    st_echarts(option=option)
+    st_echarts(options=option)
