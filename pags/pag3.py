@@ -80,28 +80,35 @@ def analisis():
     popularity_by_album = fd3.groupby('album')['popularity'].mean().reset_index()
     # Configurar el gráfico de barras
     option = {
-        "title": {
-            "text": "Popularidad Promedio por Álbum de Taylor Swift"
+    'dataset': {
+        'source': [
+            ['popularity', 'album'],
+        ] + fd3[['popularity', 'album']].values.tolist()  # Añadir datos
         },
-        "tooltip": {},
-        "xAxis": {
-            "type": "category",
-            "data": popularity_by_album['album'].tolist()
-        },
-        "yAxis": {
-            "type": "value",
-            "name": "Popularidad Promedio"
-        },
-        "series": [{
-            "name": "Popularidad",
-            "type": "bar",
-            "data": popularity_by_album['popularity'].tolist(),
-            "itemStyle": {
-                "color": "hotpink"
+        'grid': {'containLabel': True},
+        'xAxis': {'name': 'Popularity'},
+        'yAxis': {'type': 'category'},
+        'visualMap': {
+            'orient': 'horizontal',
+            'left': 'center',
+            'min': 0,
+            'max': 100,
+            'text': ['High Popularity', 'Low Popularity'],
+            'dimension': 0,  # Usar la columna de popularidad para el mapeo
+            'inRange': {
+                'color': ['#65B581', '#FFCE34', '#FD665F']  # Colores para el rango de popularidad
             }
-        }]
+        },
+        'series': [
+            {
+                'type': 'bar',
+                'encode': {
+                    'x': 'popularity',  # Mapear popularidad al eje X
+                    'y': 'album'  # Mapear álbum al eje Y
+                }
+            }
+        ]
     }
     
-    # Mostrar el gráfico en Streamlit
-    st.title("Gráfico de Popularidad Promedio por Álbum (Álbumes Específicos)")
-    st_echarts(options=option)
+    # Mostrar en Streamlit
+    st_pyecharts(option)
