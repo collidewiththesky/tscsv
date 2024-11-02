@@ -80,7 +80,7 @@ def analisis():
     popularity_by_album = fd3.groupby('album')['popularity'].mean().reset_index()
     # Configurar el gráfico de barras
     option = {
-    'dataset': {
+        'dataset': {
         'source': [
             ['popularity', 'album'],
         ] + fd3[['popularity', 'album']].values.tolist()  # Añadir datos
@@ -105,10 +105,10 @@ def analisis():
                 'encode': {
                     'x': 'popularity',  # Mapear popularidad al eje X
                     'y': 'album'  # Mapear álbum al eje Y
+                    }
                 }
-            }
-        ]
-    }
+            ]
+        }
     
     # Mostrar en Streamlit
     st_pyecharts(option)
