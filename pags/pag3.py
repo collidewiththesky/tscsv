@@ -15,7 +15,7 @@ def analisis():
 
     # Preparar los datos para el gráfico de torta
     labels = [album['album'] for album in album_counts]
-    values = [album['canciones'] for album in album_counts]
+    values = [album['name'] for album in album_counts]
     options = {
         "title": {"text": "Porcentaje de Canciones por Álbum", "left": "center"},
         "tooltip": {"trigger": "item"},
