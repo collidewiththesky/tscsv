@@ -107,7 +107,6 @@ def analisis():
         "data": pba["popularity"].tolist()
         }]
     }
-    }
     
     # Mostrar el gráfico en Streamlit
     st_echarts(options=option)
