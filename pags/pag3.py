@@ -5,7 +5,7 @@ from streamlit_echarts import st_echarts
 
 def analisis():
     options = {
-        "title": {"text": "某站点用户访问来源", "subtext": "纯属虚构", "left": "center"},
+        "title": {"text": "Porcentaje de Canciones por Álbum", "left": "center"},
         "tooltip": {"trigger": "item"},
         "legend": {"orient": "vertical", "left": "left",},
         "series": [
