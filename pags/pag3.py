@@ -97,9 +97,7 @@ def analisis():
         "orient": 'horizontal',
         "left": 'center',
         "dimension": 0,
-        "inRange": {
-          "color": ['#65B581', '#FFCE34', '#FD665F']
-        }
+        "color": ["lightskyblue", "gold", "hotpink","steelblue","purple","beige","limegreen","sienna","silver","dimgray"]
     },
     "series": [{
         "name": "popularity",
@@ -109,4 +107,4 @@ def analisis():
     }
     
     # Mostrar el gráfico en Streamlit
-    st_echarts(options=option)
+    st_echarts(options=option,height='600px')
