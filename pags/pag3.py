@@ -33,7 +33,7 @@ def analisis():
                 },
             }
         ],
-        "color": ["beige", "blue", "green", "pink",'purple','khaki','fuchsia','yellow','orange','brown']
+        "color": ["beige", "blue", "green", "pink","purple","goldenrod","fuchsia","yellow","orange","brown"]
     }
     st_echarts(
         grafikito=grafikito, height="600px",
