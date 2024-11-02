@@ -98,7 +98,7 @@ def analisis():
         "left": 'center',
         "dimension": 0,
         "inRange": {
-          "color": ["lightskyblue", "gold", "hotpink","steelblue","purple","beige","limegreen","sienna","silver","dimgray"]
+          "color": ['#65B581', '#FFCE34', '#FD665F']
         }
     },
     "series": [{
