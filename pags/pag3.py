@@ -11,8 +11,11 @@ def analisis():
     data_filtrada = data[data['album'].isin(albumes_seleccionados)]
 
     # Contar el número de canciones por álbum
-    album_counts = data_filtrada['album'].value_counts().reset_index()
-    album_counts.columns = ['album', 'canciones']
+    album_counts = df.to_dict(orient='records')
+
+    # Preparar los datos para el gráfico de torta
+    labels = [album['album'] for album in album_counts]
+    values = [album['canciones'] for album in album_counts]
     options = {
         "title": {"text": "Porcentaje de Canciones por Álbum", "left": "center"},
         "tooltip": {"trigger": "item"},
@@ -22,7 +25,7 @@ def analisis():
                 "name": "访问来源",
                 "type": "pie",
                 "radius": "50%",
-                "data": album_counts,
+                "data": [{"value": v, "name": l} for v, l in zip(values, labels)],
                 "emphasis": {
                     "itemStyle": {
                         "shadowBlur": 10,
