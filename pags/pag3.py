@@ -97,7 +97,7 @@ def analisis():
         "left": 'center',
         "dimension": 0,
         "inRange": {
-          "color": kolors
+          "color": ["lightskyblue", "gold", "hotpink","steelblue","purple","beige","limegreen","sienna","silver","dimgray"]
         }
     },
     "series": [{
@@ -105,6 +105,7 @@ def analisis():
         "type": "bar",
         "data": pba["popularity"].tolist()
         }]
+    }
     }
     
     # Mostrar el gráfico en Streamlit
