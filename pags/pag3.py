@@ -80,34 +80,35 @@ def analisis():
     fd3 = df[df['album'].isin(albs)]
     popularity_by_album = fd3.groupby('album')['popularity'].mean().reset_index()
     colors = ["#FF5733", "#33FF57", "#3357FF", "#F39C12"]  # Añade más colores si es necesario
+    numalbs = len(fd3)
     
     # Configuración del gráfico
     option = {
-        "title": {
-            "text": "Popularidad Promedio de Álbumes Filtrados",
-            "subtext": "Datos de Taylor Swift",
-            "left": "center"
-        },
-        "tooltip": {},
-        "xAxis": {
-            "type": "value"
-        },
-        "yAxis": {
-            "type": "category",
-            "data": fd3["album"].tolist()
-        },
-        "series": [{
-            "name": "Popularidad",
-            "type": "bar",
-            "data": fd3["popularity"].tolist(),
-            "itemStyle": {
-                "color": {
-                    "type": "linear",
-                    "x": 0,
-                    "y": 0,
-                    "x2": 1,
-                    "y2": 1,
-                    "colorStops": [{"offset": i / len(colors), "color": colors[i]} for i in range(len(fd3))]
+    "title": {
+        "text": "Popularidad Promedio de Álbumes Filtrados",
+        "subtext": "Datos de Taylor Swift",
+        "left": "center"
+    },
+    "tooltip": {},
+    "xAxis": {
+        "type": "value"
+    },
+    "yAxis": {
+        "type": "category",
+        "data": fd3["album"].tolist()
+    },
+    "series": [{
+        "name": "popularity",
+        "type": "bar",
+        "data": fd3["popularity"].tolist(),
+        "itemStyle": {
+            "color": {
+                "type": "linear",
+                "x": 0,
+                "y": 0,
+                "x2": 1,
+                "y2": 1,
+                "colorStops": [{"offset": i / numalbs, "color": colors[i]} for i in range(numalbs)]
                 }
             }
         }]
