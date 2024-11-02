@@ -12,7 +12,7 @@ def analisis():
     labels = cpa['album'].tolist()
     values = cpa['canciones'].tolist()
     gpie = {
-        "title": {"text": "Porcentaje de Canciones por Álbum", "left": "center"},
+        "title": {"text": " ", "left": "center"},
         "tooltip": {"trigger": "item"},
         "legend": {"orient": "vertical", "left": "left",},
         "series": [
@@ -32,6 +32,7 @@ def analisis():
         ],
         "color": ["lightskyblue", "gold", "hotpink","steelblue","purple","beige","limegreen","sienna","silver","dimgray"]
     }
+    st.subheader('Porcentaje de Canciones por Álbumes')
     st_echarts(
         options=gpie, height="600px",
     )
