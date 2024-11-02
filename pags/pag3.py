@@ -78,7 +78,7 @@ def analisis():
     #Grafico 3
     
     fd3 = df[df['album'].isin(albs)]
-    popularity_by_album = fd3.groupby('album')['popularity'].mean().reset_index()
+    pba = fd3.groupby('album')['popularity'].mean().reset_index()
     option = {
     "title": {
         "text": "Popularidad Promedio de Álbumes Filtrados",
@@ -91,12 +91,12 @@ def analisis():
     },
     "yAxis": {
         "type": "category",
-        "data": fd3["album"].tolist()
+        "data": pba["album"].tolist()
     },
     "series": [{
         "name": "popularity",
         "type": "bar",
-        "data": fd3["popularity"].tolist(),
+        "data": pba["popularity"].tolist(),
         "itemStyle": {
             "color": "hotpink"
             }
