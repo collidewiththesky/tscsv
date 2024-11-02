@@ -38,7 +38,7 @@ def analisis():
     fd2 = df[df['album'].isin(albs)]
     
     # Pivot the DataFrame for a stacked line graph
-    pivot_df = fd2.pivot(index='name', columns='album', values='popularity').fillna(0)
+    pivot_df = fd2.pivot(index='track_number', columns='album', values='popularity').fillna(0)
     
     # Prepare the data for ECharts
     chart_data = {
