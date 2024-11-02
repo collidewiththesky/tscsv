@@ -14,7 +14,7 @@ def analisis():
     gpie = {
         "title": {"text": " ", "left": "center"},
         "tooltip": {"trigger": "item"},
-        "legend": {"orient": "vertical", "left": "left",},
+        "legend": {"orient": "horizontal", "left": "left",},
         "series": [
             {
                 "name": "Álbum",
