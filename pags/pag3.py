@@ -99,7 +99,6 @@ def analisis():
             "data": popalb['popularity'].tolist(),
             "itemStyle": {
                 "color": kolors[i % len(kolors)]
-                }
             }
         }]
     }
