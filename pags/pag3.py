@@ -4,6 +4,15 @@ import streamlit as st
 from streamlit_echarts import st_echarts
 
 def analisis():
+    data = pd.read_csv('taylor_swift_spotify.csv')
+    albumes_seleccionados = ['Fearless (Platinum Edition)', '1989', 'Lover']
+
+    # Filtrar el DataFrame para incluir solo los álbumes seleccionados
+    data_filtrada = data[data['album'].isin(albumes_seleccionados)]
+
+    # Contar el número de canciones por álbum
+    album_counts = data_filtrada['album'].value_counts().reset_index()
+    album_counts.columns = ['album', 'canciones']
     options = {
         "title": {"text": "Porcentaje de Canciones por Álbum", "left": "center"},
         "tooltip": {"trigger": "item"},
@@ -13,13 +22,7 @@ def analisis():
                 "name": "访问来源",
                 "type": "pie",
                 "radius": "50%",
-                "data": [
-                    {"value": 1048, "name": "搜索引擎"},
-                    {"value": 735, "name": "直接访问"},
-                    {"value": 580, "name": "邮件营销"},
-                    {"value": 484, "name": "联盟广告"},
-                    {"value": 300, "name": "视频广告"},
-                ],
+                "data": album_counts.to_dict(orient='records'),
                 "emphasis": {
                     "itemStyle": {
                         "shadowBlur": 10,
