@@ -4,18 +4,14 @@ import streamlit as st
 from streamlit_echarts import st_echarts
 
 def analisis():
-    data = pd.read_csv('taylor_swift_spotify.csv')
-    albumes_seleccionados = ['Fearless (Platinum Edition)', '1989', 'Lover']
+    df = pd.read_csv('taylor_swift_spotify.csv')
+    albumes_a_incluir = ['Fearless (Platinum Edition)', 'Taylor Swift (Deluxe Edition)']
 
-    # Filtrar el DataFrame para incluir solo los álbumes seleccionados
-    data_filtrada = data[data['album'].isin(albumes_seleccionados)]
+# Filtrar el DataFrame para incluir solo esos álbumes
+    df_filtrado = df[df['album'].isin(albumes_a_incluir)]
 
-    # Contar el número de canciones por álbum
-    album_counts = data_filtrada.to_dict(orient='records')
-
-    # Preparar los datos para el gráfico de torta
-    labels = [album['album'] for album in album_counts]
-    values = [album['name'] for album in album_counts]
+# Agrupar los datos para obtener el número de canciones por álbum
+    album_counts = df_filtrado.groupby('album').size().reset_index(name='canciones')
     options = {
         "title": {"text": "Porcentaje de Canciones por Álbum", "left": "center"},
         "tooltip": {"trigger": "item"},
