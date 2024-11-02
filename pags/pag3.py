@@ -105,7 +105,7 @@ def analisis():
                     "x2": 1,
                     "y2": 1,
                     "colorStops": [
-                        {"offset": 0, "color": colors[i % len(colors)]} for i in range(len(popularity_by_album))
+                        {"offset": 0, "color": kolors[i % len(kolors)]} for i in range(len(popalb))
                     ]
                 }
             }
