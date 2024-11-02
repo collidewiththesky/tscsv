@@ -92,6 +92,7 @@ def analisis():
     "yAxis": {
         "type": "category",
         "data": pba["album"].tolist()
+    },
     "visualMap": {
         "orient": 'horizontal',
         "left": 'center',
